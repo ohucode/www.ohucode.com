@@ -33,23 +33,21 @@
   "레이아웃 생성"
   []
   (let [tmp (b/tmp-dir!)]
-    (fn middleware [next-handler]
-      (fn handler [fileset]
-        (println "tmpdir: " (.getPath tmp))
-        (let [in  (b/input-files fileset)
-              mds (b/by-ext [".md" ".markdown"] in)]
-          (doseq [md mds]
-            (let [infile  (b/tmp-file md)
-                  inpath  (b/tmp-path md)
-                  outpath (s/replace inpath #"\.(md|markdown)$" ".html")
-                  outfile (io/file tmp outpath)]
-              (println "--- " inpath  " => " outpath " ---")
-              (convert identity infile outfile))))
-        (println (count fileset) (count (b/add-source fileset tmp)))
-        (println (b/add-resource fileset tmp))
-        (next-handler (b/commit! (b/add-resource fileset tmp)))))))
+    (b/with-pre-wrap fileset
+      (let [in  (b/input-files fileset)
+            mds (b/by-ext [".md" ".markdown"] in)]
+        (doseq [md mds]
+          (let [infile  (b/tmp-file md)
+                inpath  (b/tmp-path md)
+                outpath (s/replace inpath #"\.(md|markdown)$" ".html")
+                outfile (io/file tmp outpath)]
+            (println "--- " inpath  " => " outpath " ---")
+            (convert identity infile outfile))))
+      (-> fileset
+          (b/add-resource tmp)
+          b/commit!))))
 
 (b/deftask build
   "빌드 태스크"
   []
-  (comp (markdown)))
+  (comp (markdown) (task/target)))
