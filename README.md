@@ -10,6 +10,10 @@
 
     $ boot build
 
+### For continuous building
+
+    $ boot watch build
+
 ## Options
 
 ## Examples
