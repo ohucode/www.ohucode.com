@@ -45,7 +45,7 @@
         (let [in-path  (b/tmp-path md)
               out-path (s/replace in-path #"\.(md|markdown)$" ".html")
               out-file (io/file tmp out-path)]
-          (info in-path  " => " out-path)
+          (info "%s => %s\n" in-path out-path)
           (convert layout (b/tmp-file md) out-file)))
       (b/commit! (b/add-resource fileset tmp)))))
 
