@@ -1,8 +1,12 @@
 # 프로젝트
 
-## 2016, CalDAV 서버 개발 (진행중)
+## 2017, 주소록 서버 개발 계약
 
-* Spring-Boot 기반 CalDAV 서버 개발 프로젝트 계약
+* Spring-Boot 기반 커스텀 주소록 서버 설계 및 개발 계약
+
+## 2016, CalDAV 서버 개발
+
+* Java8 Spring-Boot 기반 CalDAV 서버 개발
 
 ## 2015, Akka 서버 개발
 
