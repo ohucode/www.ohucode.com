@@ -8,9 +8,12 @@ pre {
 
 img.profile {
   width: 200px;
-
 }
 
 html,body {
   font-size: 1.0rem;
+}
+
+main a:link {
+  text-decoration: underline;
 }

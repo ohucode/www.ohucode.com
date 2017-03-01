@@ -22,10 +22,10 @@
 
 * Daum 클라우드기술팀 팀장
   * Redis 클라우드, DNS 클라우드, Tomcat 클라우드 개발 리딩
-* Daum 사내 개발자 대상, Git 저장소 개발 및 운영
+* Daum 사내 개발자 대상, [Git 저장소 개발 및 운영](https://www.slideshare.net/hatemogi/devon2013-git)
 * Daum 마이피플, 네트워크 프로토콜 설계 및 초기 구현
 * Daum 클라우드, 파일 동기화 프로토콜 설계
-* Daum 캘린더, RubyOnRails로 개발
+* [Daum 캘린더, RubyOnRails로 개발](https://medium.com/happyprogrammer-in-jeju/다음-캘린더-서비스의-비하인드-스토리-ec0faac67f05)
 * Daum 카페, 한줄게시판, 투표판 개발
 
 > [링크드인 프로필 보기](https://kr.linkedin.com/in/hatemogi)
