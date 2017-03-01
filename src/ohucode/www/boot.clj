@@ -90,4 +90,4 @@
 (b/deftask build
   "빌드 태스크"
   []
-  (comp (markdown) (task/target)))
+  (comp (markdown) (task/target :dir ["docs"])))

@@ -1,0 +1,16 @@
+main {
+  text-align: left;
+}
+
+pre {
+  padding: 0;
+}
+
+img.profile {
+  width: 200px;
+
+}
+
+html,body {
+  font-size: 1.0rem;
+}
