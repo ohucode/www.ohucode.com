@@ -90,4 +90,6 @@
 (b/deftask build
   "빌드 태스크"
   []
-  (comp (markdown) (task/target :dir ["docs"])))
+  (comp (markdown)
+        (task/sift :to-resource [#"CNAME"])
+        (task/target :dir ["docs"])))
