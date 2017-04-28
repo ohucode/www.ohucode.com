@@ -1,16 +1,13 @@
 "use strict";
 
-(function (w, d) {
+{
     hljs.initHighlightingOnLoad()
-    w.onload = function() {
-        const href = d.location.href
-        const v = Array.from(d.querySelectorAll('ul.nav a'))
-              .filter((a) => href.endsWith(a.getAttribute("href")))
-              .map((a) => a.parentNode)
-        v.push(d.querySelector('ul.nav li'))
-        v[0].className = "active"
+    window.onload = function() {
+        const as = Array.from(document.querySelectorAll('ul.nav a'))
+        const match = as.filter(a => a.href == document.location.href)
+        match.concat(as)[0].parentNode.className = 'active'
     }
-})(window, document);
+}
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
