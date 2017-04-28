@@ -4,9 +4,9 @@
     hljs.initHighlightingOnLoad()
     w.onload = function() {
         const href = d.location.href
-        const as = Array.from(d.querySelectorAll('ul.nav a'))
-        const v = as.filter(function(a) { return href.endsWith(a.href) })
-              .map(function(a) { return a.parentNode });
+        const v = Array.from(d.querySelectorAll('ul.nav a'))
+              .filter((a) => href.endsWith(a.getAttribute("href")))
+              .map((a) => a.parentNode)
         v.push(d.querySelector('ul.nav li'))
         v[0].className = "active"
     }
