@@ -1,14 +1,16 @@
-(function ($) {
+"use strict";
+
+(function (w, d) {
     hljs.initHighlightingOnLoad()
-    $(function() {
-      const href = document.location.href
-      const v = $('ul.nav a').filter(function(idx, a) {
-        return href.endsWith(a.attributes["href"].value)
-      }).parent()
-      v.push($('ul.nav li:first'))
-      $(v[0]).addClass("active")
-    })
-})(jQuery);
+    w.onload = function() {
+        const href = d.location.href
+        const as = Array.from(d.querySelectorAll('ul.nav a'))
+        const v = as.filter(function(a) { return href.endsWith(a.href) })
+              .map(function(a) { return a.parentNode });
+        v.push(d.querySelector('ul.nav li'))
+        v[0].className = "active"
+    }
+})(window, document);
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -10,6 +10,10 @@
 
     $ boot build
 
+## REPL에서 사용법
+
+    > (boot (build))
+
 ### For continuous building
 
     $ boot watch build

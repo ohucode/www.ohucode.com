@@ -1,7 +1,8 @@
 (ns ohucode.www.view
   (:require
-   [hiccup.core :refer [h]]
-   [hiccup.page :refer [html5 include-css include-js]]))
+   [hiccup.core :refer [h html]]
+   [hiccup.page :refer [html5 include-css include-js]]
+   [markdown.core :refer [md-to-html-string]]))
 
 (defn layout
   "HTML 기본 레이아웃"
@@ -17,10 +18,12 @@
                 "css/jumbotron.css"
                 "css/ohucode.css"])]
          [:body contents
-          (map include-js ["https://code.jquery.com/jquery-3.1.0.min.js"
+          (map include-js ["https://unpkg.com/vue"
+                           "https://unpkg.com/axios/dist/axios.min.js"
                            "https://d3js.org/d3.v4.min.js"
                            "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"
-                           "js/ohucode.js"])]))
+                           "js/ohucode.js"
+                           "js/navigation.js"])]))
 
 (defn cover
   "커버 페이지 레이아웃"
@@ -29,9 +32,10 @@
            [:div.header.clearfix
             [:nav
              [:ul.nav.nav-pills.pull-right
-              [:li {:role "presentation"} [:a {:href "index.html"} "소개"]]
-              [:li {:role "presentation"} [:a {:href "projects.html"} "프로젝트"]]
-              [:li {:role "presentation"} [:a {:href "contact.html"} "연락처"]]]]
+              (for [[href title] [["index.html" "소개"]
+                                  ["projects.html" "프로젝트"]
+                                  ["contact.html" "연락처"]]]
+                [:li {:role "presentation"} [:a {:href href} title]])]]
             [:h3.text-muted "오후코드"]]
            [:div.jumbotron
             [:h2 "프리랜서 서버 개발자"]
@@ -41,15 +45,19 @@
             [:p.pull-right [:a {:href "https://medium.com/@hatemogi"}
                             [:i.fa.fa-medium] " hatemogi"]]
             [:p [:a {:href "https://kr.linkedin.com/in/hatemogi"}
-                            [:i.fa.fa-linkedin] " 링크드인"]]]]))
+                 [:i.fa.fa-linkedin] " 링크드인"]]]]))
 
-(defn md->html "마크다운을 HTML로 변환"
+(defn md->html
+  "마크다운을 HTML로 변환"
   [text]
-  (markdown.core/md-to-html-string
-   text
-   :reference-links? true
-   :footnotes? true))
+  (md-to-html-string text
+                     :reference-links? true
+                     :footnotes? true))
 
 (def ^:private about-content
   [:div [:h1 "오후코드"]
    [:img.profile {:src "img/profile.jpg"}]])
+
+(defn index-content []
+  (html [:div.col-lg-6 "왼쪽 영역" [:svg]]
+        [:div.col-lg-6 "오른쪽 영역"]))
