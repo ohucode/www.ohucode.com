@@ -23,34 +23,23 @@
           (convert v/cover (tmp-file body) out-file)))
       (commit! (add-resource fileset tmp)))))
 
-(deftask index
-  "첫페이지 변환"
+(deftask generate-html
+  "HTML 생성"
   []
-  (let [tmp (tmp-dir!)]
+  (let [tmp (tmp-dir!)
+        생성 (fn [파일명 내용] (spit (io/file tmp 파일명) 내용))
+        파일셋 {"index._html" v/index-page
+                "404._html" v/not-found}]
     (with-pre-wrap fileset
-      (info "writing index._html\n")
-      (spit (io/file tmp "index._html") (v/index-content))
-      (commit! (add-source fileset tmp)))))
-
-(deftask markdown
-  "마크다운 페이지 변환"
-  []
-  (let [tmp (tmp-dir!)]
-    (with-pre-wrap fileset
-      (doseq [md (by-ext [".md" ".markdown"] (input-files fileset))]
-        (let [in-path  (tmp-path md)
-              out-path (s/replace in-path #"\.(md|markdown)$" "._html")
-              out-file (io/file tmp out-path)]
-          (info "%s => %s\n" in-path out-path)
-          (convert v/md->html
-                   (tmp-file md) out-file)))
+      (info "writing index._html and 404.html\n")
+      (dorun (for [[파일명 생성함수] 파일셋]
+               (생성 파일명 (생성함수))))
       (commit! (add-source fileset tmp)))))
 
 (deftask build
   "빌드 태스크"
   []
-  (comp (markdown)
-        (index)
+  (comp (generate-html)
         (cover-html)
         (task/sift :to-resource [#"CNAME"])
         (task/target :dir ["docs"])))

@@ -3,6 +3,6 @@
  :resource-paths #{"res"}
  :dependencies '[[org.clojure/clojure "1.8.0"]
                  [hiccup "1.0.5"]
-                 [markdown-clj "0.9.89"]])
+                 [instaparse "1.4.7"]])
 
 (require '[ohucode.www.boot :refer :all])
