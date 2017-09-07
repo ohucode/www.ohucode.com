@@ -27,11 +27,11 @@
 
 # 대표경력
 
-* Daum 10년+ 근무. 클라우드컴퓨팅팀 팀장 역임"]
+* Daum 10년+ 근무. 클라우드컴퓨팅팀 팀장 역임
 * Daum 사내 개발자 대상, [Git 저장소 서비스 기획, 개발, 운영](https://www.slideshare.net/hatemogi/devon2013-git)
 * Daum 마이피플, 네트워크 프로토콜 설계 및 초기 구현
 * Daum 클라우드, 파일 동기화 프로토콜 설계 및 SDK 개발
-* Daum 캘린더, RubyOnRails로 개발. 개발 TFT 리딩
+* [Daum 캘린더](https://medium.com/happyprogrammer-in-jeju/다음-캘린더-서비스의-비하인드-스토리-ec0faac67f05), RubyOnRails로 개발. 개발 TFT 리딩
 * Daum 카페, 한줄게시판, 투표판 개발
 
 # 출장 강의
