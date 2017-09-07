@@ -57,7 +57,7 @@ section:last-child {
   color: #000;
 }
 
-section:last-child a:link {
+section:last-child a {
   color: #1248db;
 }
 
@@ -89,13 +89,9 @@ nav {
   font-size: 1.2rem;
 }
 
-main a:link {
+main a {
   text-decoration: none;
   color: #ffff55;
-}
-
-main a:visited {
-  color: #dd5;
 }
 
 footer {
