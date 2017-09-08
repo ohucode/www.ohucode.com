@@ -70,6 +70,10 @@ section:nth-child(3) {
   background-color: #0093D1;
 }
 
+section ul {
+  margin-left: 0.8rem;
+}
+
 pre {
   padding: 0;
 }
