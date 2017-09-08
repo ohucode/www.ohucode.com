@@ -1,6 +1,6 @@
 # 오후코드
 
-> 반갑습니다, 프리랜서 개발자 김대현입니다. 국내 최대 수준의 웹서비스 트래픽을 처리한 경험을 바탕으로, 탄탄하고 빠른 서버 소프트웨어를 개발해드립니다.
+> 반갑습니다, 프리랜서 개발자 김대현입니다. 국내 최대 수준의 웹서비스 트래픽을 처리한 경험을 바탕으로, 탄탄하고 빠른 서버 소프트웨어를 외주 개발하는 일을 하고 있습니다.
 
 ## 전문분야
 
@@ -15,7 +15,7 @@
 
 ## 2017년
 
-* 스튜디오씨드코리아(주), ProtoPie 클라우드 개발계약
+* 스튜디오씨드코리아(주), [ProtoPie](https://protopie.io) 클라우드 개발계약
 * 판교 N사, 협업 시스템 주소록 서버 (w/LDAP) 개발계약
 
 ## 2016년
@@ -38,9 +38,9 @@
 
 # 출장 강의
 
-* 2016년, 판교 N사 대상, "C++개발자를 위한 Netty 프로그래밍 실습" 강의
-* 2016년, 제주 IT 프리랜서 그룹 대상 ["Git 기초 사용법"](https://medium.com/happyprogrammer-in-jeju/git-kickstart-발표-후기-58f54582dd67) 무료 강의 진행
-* 2015년, 판교 N사 대상, ["Netty 프로그래밍 기초 실습"](https://medium.com/happyprogrammer-in-jeju/netty-기초-강습-후기-8ba4fdee2518) 강의 세 차례 진행
+* 2016년, N사 대상, "C++개발자를 위한 Netty 프로그래밍 실습"
+* 2016년, 제주 IT 프리랜서 그룹 대상 ["Git 기초 사용법"](https://medium.com/happyprogrammer-in-jeju/git-kickstart-발표-후기-58f54582dd67) 강의
+* 2015년, N사 대상, ["Netty 프로그래밍 기초 실습"](https://medium.com/happyprogrammer-in-jeju/netty-기초-강습-후기-8ba4fdee2518) 강의 세 차례
 
 # 연락처
 
